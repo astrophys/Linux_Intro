@@ -138,12 +138,12 @@ Operating System
 %%\put(-30, 200){\includegraphics[height=0.8in]{images/Panoramic_Austin.jpg}}
 %\put(100, 100){\includegraphics[height=1.8in]{images/shell.eps}}
 %\end{picture}
-\begin{tabular}{cl}  
-  \begin{tabular}{c}
-    \includegraphics[height=7cm, width=4.5cm]{images/shell.eps}
-    \end{tabular}
-    & \begin{tabular}{l}
-      \parbox{0.5\linewidth}{%  change the parbox width as appropiate
+%\begin{tabular}{cl}  
+%  \begin{tabular}{c}
+%    \includegraphics[height=7cm, width=4.5cm]{images/shell.eps}
+%    \end{tabular}
+%    & \begin{tabular}{l}
+%      \parbox{0.5\linewidth}{%  change the parbox width as appropiate
     \begin{itemize}
         \item Used at the command line, i.e. the `terminal'
         \bigskip
@@ -151,9 +151,9 @@ Operating System
         \bigskip
         \item Bash is the default shell on Baker.
     \end{itemize}
-    }
-    \end{tabular}  \\
-\end{tabular}
+%    }
+%    \end{tabular}  \\
+%\end{tabular}
 \end{frame}
 
 
@@ -276,6 +276,29 @@ Operating System
 \bigskip
 \begin{itemize}
     \item \code{mv $\sim$/Scratch/file.txt $\sim$/Scratch/file2.txt}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Basic Commands}
+\code{cp}- copy files or directories
+\bigskip
+\begin{itemize}
+    \item \code{cp $\sim$/Scratch/file.txt $\sim$/Scratch/file2.txt}
+    \bigskip
+    \item \code{cp -r $\sim$/Scratch/newdir $\sim$/Scratch/newdir2}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Basic Commands}
+\code{rm}- delete files or directories. Be Careful. E.g.
+\bigskip
+\begin{itemize}
+    \item \code{rm $\sim$/Scratch/file.txt}
+    \bigskip
+    \item \code{rm -r $\sim$/Scratch/newdir}
 \end{itemize}
 \end{frame}
 
