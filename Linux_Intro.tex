@@ -12,6 +12,7 @@
 \usepackage{media9}
 \usepackage{hyperref}
 \usepackage{psfrag}
+\usepackage{pdfpages}
 %\usepackage[style=authoryear]{biblatex}
 %\bibliography{/Users/ali/Library/texmf/bibtex/bib/references}
 
@@ -77,8 +78,12 @@ Mac:
 \begin{frame}
 \frametitle{Cluster Architecture}
 \begin{picture}(320,250)  %must be related to where it is centered
-%\put(-30, 200){\includegraphics[height=0.8in]{images/Panoramic_Austin.jpg}}
-\put(0, 70){\includegraphics[height=2.5in]{images/GPFS_File.eps}}
+%\put(0, 70){\includegraphics[height=2.5in]{images/GPFS_File.eps}}
+%\setbeamercolor{background canvas}{bg=}
+%\includepdf{images/GPFS_File-eps-converted-to.pdf}
+%\includepdf{images/GPFS_File-eps-converted-to.pdf}
+
+\put(0, 70){\includegraphics[height=2.5in]{images/GPFS_File-eps-converted-to.pdf}}
 \end{picture}
 \end{frame}
 
