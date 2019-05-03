@@ -13,3 +13,6 @@ This presentation covers :
 3. Simple commands
     * E.g. `man`, `ls`, `mkdir`, `cd`, `pwd`, `mv`, `cp`, `rm`
 4. File Permissions
+
+## Compile
+`pdflatex Linux_Intro.tex`
