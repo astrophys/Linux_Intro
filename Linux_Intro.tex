@@ -13,6 +13,7 @@
 \usepackage{hyperref}
 \usepackage{psfrag}
 \usepackage{pdfpages}
+\usepackage{tikz}
 %\usepackage[style=authoryear]{biblatex}
 %\bibliography{/Users/ali/Library/texmf/bibtex/bib/references}
 
@@ -45,7 +46,7 @@
 \title{Introduction to Linux}
 \author{Ali Snedden}
 \institute{Nationwide Children's Hospital}
-\date{April 5, 2019}
+\date{November 1, 2019}
  
  
  
@@ -336,23 +337,111 @@ E.g.
     \item \code{ls -l $\sim$/Scratch/file.txt}, yields : 
     \hspace{5mm} \code{-rw-r--r--  1 user group 0 Apr  5 09:01 file.txt}
     \smallskip
-    \item \code{chmod 755 somescript.sh}
-    \bigskip
-    \item \code{ls -l $\sim$/Scratch/file.txt}, yields : 
-    \hspace{5mm} \code{-rwxr-xr-x  1 user group 0 Apr  5 09:01 file.txt}
 \end{itemize}
 \bigskip
 
+
+% http://www.texample.net/tikz/examples/beamer-arrows/
+% https://tex.stackexchange.com/a/83434/84495
+\begin{tikzpicture}[overlay]
+
+%\coordinate (G) at (2.3,6.1);
+\coordinate (A) at (1.15,1.3);
+\coordinate (AU) at (1.15,1.5);
+\coordinate (B) at (1.65,1.3);
+\coordinate (BU) at (1.8,1.5);
+%\coordinate (AB1) at (1.35,1.3);
+\coordinate (AB1) at (1.55,1.3);
+\coordinate (AB2) at (0.5,0.3);
+
+
+\coordinate (C) at (1.80,1.3);
+\coordinate (D) at (2.35,1.3);
+\coordinate (CD1) at (2.15,1.3);
+\coordinate (CD2) at (2.15,0.3);
+
+
+\coordinate (E) at (2.50,1.3);
+\coordinate (EU) at (2.50,1.5);
+\coordinate (F) at (3.0,1.3);
+\coordinate (F1) at (3.15,1.3);
+\coordinate (FU) at (3.15,1.5);
+\coordinate (EF1) at (2.75,1.3);
+\coordinate (EF2) at (3.60,0.4);
+
+\draw [red,<-<,ultra thick]    (A) to[out=0,in=0] (B);
+\draw [red,-]    (A) -- (AU);
+\draw [red,-]    (C) -- (BU);
+\draw [red,-,ultra thick]    (AB1) -- (AB2);
+\draw [blue,<-<,ultra thick]   (C) to[out=0,in=0] (D);
+\draw [blue,-,ultra thick]   (CD1) -- (CD2);
+\draw [black,<-<,ultra thick] (E) to[out=0,in=0] (F);
+\draw [black,-]    (E) -- (EU);
+\draw [black,-]    (F1) -- (FU);
+\draw [black,-,ultra thick,bend right] (EF1) to[out=0,in=0] (EF2);
+\node[draw,red] at (0,0) {you};
+\node[draw,blue] at (2.15,-0) {group};
+\node[draw,black] at (4.8, -0) {everyone else};
+\draw [red,-,ultra thick]    (0.5,0) -- (2.25,-0.6);
+\draw [blue,-,ultra thick]   (2.6,-0.25) -- (2.6,-0.6);
+\draw [black,-,ultra thick]  (3.5,-0.250) -- (2.8,-0.6);
+\end{tikzpicture}
+\bigskip
+\pause
+\begin{itemize}
+    \smallskip
+    \item \code{chmod 755 file.txt}
+    \pause
+    \bigskip
+    %\item \code{ls -l $\sim$/Scratch/file.txt}, yields : 
+    %\hspace{5mm} \code{-rwxr-xr-x  1 user group 0 Apr  5 09:01 file.txt}
+    \item {\small \code{-rwxr-xr-x  1 user group 0 Apr  5 09:01 file.txt}}
+\end{itemize}
+\pause
+
+\bigskip
 Explanation:
 \begin{itemize}
-    \item First number is you.
-    \item Second number is for your group (i.e. lab).
-    \item Third number is for everyone else.
+    %\item First number is you.
+    %\item Second number is for your group (i.e. lab).
+    %\item Third number is for everyone else.
     \item \code{r} = 4, \code{w} = 2, \code{x} = 1
     \item \code{7} = \code{4} + \code{2} + \code{1} = read (\code{r}) + write (\code{w}) +  execute(\code{x})
     \item \code{5} = \code{4} + \code{1} = read (\code{r}), execute(\code{x})
 \end{itemize}
+
+
 \end{frame}
+
+
+
+%\begin{frame}
+%\frametitle{Permissions}
+%\code{chmod}- Change permissions.
+%E.g.
+%\begin{itemize}
+%    \item \code{ls -l $\sim$/Scratch/file.txt}, yields : 
+%    \hspace{5mm} \code{-rw-r--r--  1 user group 0 Apr  5 09:01 file.txt}
+%    \smallskip
+%    \item \code{chmod 755 somescript.sh}
+%    \bigskip
+%    \item \code{ls -l $\sim$/Scratch/file.txt}, yields : 
+%    \hspace{5mm} \code{-rwxr-xr-x  1 user group 0 Apr  5 09:01 file.txt}
+%\end{itemize}
+%\bigskip
+%
+%Explanation:
+%\begin{itemize}
+%    \item First number is you.
+%    \item Second number is for your group (i.e. lab).
+%    \item Third number is for everyone else.
+%    \item \code{r} = 4, \code{w} = 2, \code{x} = 1
+%    \item \code{7} = \code{4} + \code{2} + \code{1} = read (\code{r}) + write (\code{w}) +  execute(\code{x})
+%    \item \code{5} = \code{4} + \code{1} = read (\code{r}), execute(\code{x})
+%\end{itemize}
+%\end{frame}
+%
+
 
 \begin{frame}
 \frametitle{Homework}
